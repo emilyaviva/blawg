@@ -1,0 +1,26 @@
+{
+  "parser": "babel-eslint",
+  "settings": {
+    "ecmascript": 6
+  },
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "semi": 1,
+    "indent": [2, 2],
+    "quotes": [1, "single"],
+    "no-multi-spaces": [1, {
+      "exceptions": {
+        "VariableDeclarator": true,
+        "FunctionExpression": true
+      }
+    }],
+    "key-spacing": [0, {"align": "value"}],
+    "no-underscore-dangle": 0
+  }
+}
