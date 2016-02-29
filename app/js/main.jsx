@@ -1,6 +1,11 @@
 import React from 'react';
+// import Mongorito, { Model } from 'mongorito';
 
 const Main = React.createClass({
+
+  // componentDidMount() {
+  //   return;
+  // },
 
   render() {
     return (

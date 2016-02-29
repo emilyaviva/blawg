@@ -1,5 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './app.jsx';
+// import Mongorito from 'mongorito';
+import Header from './header.jsx';
+import Main from './main.jsx';
+import NewPost from './newpost.jsx';
 
-render(<App />, document.getElementById('app'));
+// Mongorito.connect('ds019028.mlab.com:19028/blawg-data');
+
+render(
+  <div>
+    <Header />
+    <Main appTitle="Hello World" />
+    <NewPost />
+  </div>,
+  document.getElementById('app')
+);
