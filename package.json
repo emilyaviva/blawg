@@ -4,7 +4,14 @@
   "description": "Yet another blawg.",
   "main": "index.js",
   "scripts": {
-    "build": "browserify app/js/index.jsx -o build/bundle.js && cp app/index.html build/index.html",
+    "build-js": "browserify app/js/index.jsx -o build/bundle.js",
+    "build-html": "cp app/index.html build/index.html",
+    "build-sass": "node-sass app/stylesheets/local.scss build/local.css",
+    "build": "npm run build-js & npm run build-html & npm run build-sass",
+    "watch-js": "nodemon -e js -w app/js -x 'npm run build-js'",
+    "watch-sass": "nodemon -e sass,scss -w app/stylesheets -x 'npm run build-sass'",
+    "watch": "npm run watch-js & npm run watch-sass",
+    "dev": "npm run build && npm run watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Emily Aviva Kapor-Mater <emily@emilyaviva.com>",
@@ -21,11 +28,14 @@
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
+    "bson": "^0.4.21",
     "eslint": "^2.0.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   },
   "dependencies": {
+    "mongoose": "^4.4.5",
+    "mongorito": "^2.0.0",
     "react-router": "^2.0.0"
   },
   "browserify": {
