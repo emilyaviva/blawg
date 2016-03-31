@@ -24,7 +24,7 @@
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
     "css-loader": "^0.23.1",
-    "eslint": "^2.3.0",
+    "eslint": "^2.5.3",
     "eslint-plugin-react": "^4.2.1",
     "file-loader": "^0.8.5",
     "json-loader": "^0.5.4",
@@ -53,6 +53,7 @@
     "normalize.css": "^3.0.3",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
+    "react-loader": "^2.2.0",
     "react-markdown": "^2.1.0",
     "standard": "^6.0.8"
   }
