@@ -53,7 +53,7 @@ r.post('/entries', (req, res) => {
   }
   new Entry({
     title: req.body.title,
-    tags: req.body.tags,
+    tags: req.body.tags || [],
     draft: req.body.draft || false,
     body: req.body.body
   })
