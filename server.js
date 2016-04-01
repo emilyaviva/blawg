@@ -49,7 +49,7 @@ r.get('/entries/:id', (req, res) => {
 
 r.post('/entries', (req, res) => {
   if (!req.body.title || !req.body.body) {
-    return res.json({success: false, msg: 'incomplete POST request'})
+    return res.json({success: false, msg: 'incomplete POST body'})
   }
   new Entry({
     title: req.body.title,
