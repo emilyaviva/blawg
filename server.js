@@ -4,12 +4,11 @@ const Entry = require('./app/models/entry-model')
 const express = require('express')
 const bodyParser = require('body-parser')
 
-const isDeveloping = process.env.NODE_ENV !== 'production'
-const port = isDeveloping ? 3000 : process.env.PORT
+const port = process.env.PORT || 3000
 
 const MONGO_USER = process.env.MONGO_USER || 'admin'
 const MONGO_PASS = process.env.MONGO_PASS || 'admin'
-const MONGO_URL = `mongodb://${MONGO_USER}:${MONGO_PASS}@${process.env.MONGO_URL || 'localhost'}`
+const MONGO_URL =  `mongodb://${MONGO_USER}:${MONGO_PASS}@${process.env.MONGO_URL || 'localhost'}`
 
 const app = express()
 
