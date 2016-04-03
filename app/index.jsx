@@ -10,8 +10,8 @@ import Entries from './components/Entries.jsx'
 render((
   <Router history={browserHistory}>
     <Route path="/" component={App} />
-    <Route path="/entries" component={Entries} />
+    <Route path="/entries" component={Entries}>
       <Route path="/entries/:id" component={Entries} />
-    <Route path="*" component={NoMatch} />
+    </Route>
   </Router>
 ), document.getElementById('app'))
