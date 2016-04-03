@@ -7,6 +7,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import App from './components/App'
 import Entries from './components/Entries'
 import ConnectedEntry from './components/ConnectedEntry'
+import AllTags from './components/AllTags'
 
 render((
   <Router history={browserHistory}>
@@ -14,6 +15,10 @@ render((
     <Route path="/entries">
       <IndexRoute component={Entries} />
       <Route path=":id" component={ConnectedEntry} />
+    </Route>
+    <Route path="/tags">
+      <IndexRoute component={AllTags} />
+      <Route path=":tag" component={Entries} />
     </Route>
   </Router>
 ), document.getElementById('app'))

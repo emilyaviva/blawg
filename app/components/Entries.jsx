@@ -15,8 +15,14 @@ class Entries extends React.Component {
   }
 
   componentDidMount() {
+    let url = 'http://localhost:3000'
+    if (this.props.params.tag) {
+      url += `/tags/${this.props.params.tag}`
+    } else {
+      url += `/entries`
+    }
     axios
-      .get('http://localhost:3000/entries')
+      .get(url)
       .then(res => {
         this.setState({
           loaded: true,

@@ -70,3 +70,9 @@ r.delete('/entries/:id', (req, res) => {
     return err ? console.error(err) : res.json({success: true})
   })
 })
+
+r.get('/tags/:tag', (req, res) => {
+  Entry.find({tags: {$in: [req.params.tag]}}, (err, doc) => {
+    return err ? console.error(err) : res.json(doc)
+  })
+})
