@@ -3,7 +3,6 @@ import axios from 'axios'
 import moment from 'moment'
 const Loader = require('react-loader')
 import { Link } from 'react-router'
-import ConnectedEntry from './ConnectedEntry'
 import Entry from './Entry'
 
 class Entries extends React.Component {

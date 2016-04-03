@@ -5,9 +5,17 @@ import Entry from './Entry'
 const Loader = require('react-loader')
 
 class ConnectedEntry extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      loaded: false,
+      entry: {}
+    }
+  }
+
   componentDidMount() {
     axios
-      .get(`http://localhost:3000/entries/${this.props.id}`)
+      .get(`http://localhost:3000/entries/${this.props.params.id}`)
       .then(res => {
         this.setState({
           loaded: true,
@@ -32,4 +40,4 @@ class ConnectedEntry extends React.Component {
   }
 }
 
-export default Entry
+export default ConnectedEntry
