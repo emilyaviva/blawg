@@ -14,15 +14,10 @@ class Entries extends React.Component {
     }
   }
 
-  componentDidMount() {
-    let url = 'http://localhost:3000'
-    if (this.props.params.tag) {
-      url += `/tags/${this.props.params.tag}`
-    } else {
-      url += `/entries`
-    }
+  getEntries() {
+    let url = 'http://localhost:3000/entries'
     axios
-      .get(url)
+    .get(url)
       .then(res => {
         this.setState({
           loaded: true,
@@ -32,7 +27,12 @@ class Entries extends React.Component {
       .catch(err => console.error(err))
   }
 
-  componentWillUnmount() {
+  componentDidMount() {
+    this.getEntries()
+  }
+
+  componentDidUpdate() {
+    this.getEntries()
   }
 
   render() {
